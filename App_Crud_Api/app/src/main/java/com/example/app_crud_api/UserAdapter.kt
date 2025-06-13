@@ -10,8 +10,12 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 
-class UserAdapter(val contexto: Context, val itens: ArrayList<UserModel>):
+class UserAdapter(val contexto: Context, val itens: ArrayList<UserModel>, private val listener: OnItemClickListener):
     RecyclerView.Adapter<UserAdapter.viewHolder>() {
+
+    interface OnItemClickListener {
+        fun onItemClick(position: Int)
+    }
 
     class viewHolder(view: View): RecyclerView.ViewHolder(view){
         val ivFoto = view.findViewById<ImageView>(R.id.ivFoto)
@@ -39,5 +43,9 @@ class UserAdapter(val contexto: Context, val itens: ArrayList<UserModel>):
             .with(contexto)
             .load(itens[position].foto)
             .into(holder.ivFoto);
+
+        holder.itemView.setOnClickListener {
+            listener.onItemClick(position)
+        }
     }
 }

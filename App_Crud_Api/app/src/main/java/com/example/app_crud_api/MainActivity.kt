@@ -16,10 +16,9 @@ import retrofit2.Callback
 import retrofit2.Response
 import retrofit2.Retrofit
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), UserAdapter.OnItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        enableEdgeToEdge()
         setContentView(R.layout.activity_main)
 
         findViewById<Button>(R.id.btIncluir).setOnClickListener {
@@ -33,14 +32,6 @@ class MainActivity : AppCompatActivity() {
         super.onResume()
 
         loadDatas()
-
-        var adapter = UserAdapter(this, ArrayList<UserModel>())
-
-        var rvUser = findViewById<RecyclerView>(R.id.rvPessoas)
-        rvUser.adapter = adapter
-
-
-
     }
 
     fun loadDatas(){
@@ -72,10 +63,22 @@ class MainActivity : AppCompatActivity() {
     fun showOnList(lista: ArrayList<UserModel>){
         val recycler = findViewById<RecyclerView>(R.id.rvPessoas)
 
-        val adapter = UserAdapter(this, lista)
+        val adapter = UserAdapter(this, lista, this)
 
         recycler.adapter = adapter
         recycler.itemAnimator = DefaultItemAnimator()
         recycler.layoutManager = LinearLayoutManager(this,LinearLayoutManager.VERTICAL, false)
+    }
+
+    override fun onItemClick(position: Int) {
+        val recyclerView = findViewById<RecyclerView>(R.id.rvPessoas)
+        val adapter = recyclerView.adapter as? UserAdapter
+        if (adapter != null) {
+            val clickedUser = adapter.itens[position]
+            val userId = clickedUser.id
+            val i = Intent(this, Cadastro::class.java)
+            intent.putExtra("userId", userId)
+            startActivity(i)
+        }
     }
 }
