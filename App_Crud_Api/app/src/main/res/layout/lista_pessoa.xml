@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="20dp"
+    >
+
+    <ImageView
+        android:id="@+id/ivFoto"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
+
+    <TextView
+        android:id="@+id/tvNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvPais"
+        app:layout_constraintBottom_toTopOf="@id/tvPais"
+        />
+    <TextView
+        android:id="@+id/tvExibeNome"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Nome:"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvExibePais"
+        app:layout_constraintBottom_toTopOf="@id/tvExibePais"
+        />
+
+    <TextView
+        android:id="@+id/tvExibeCidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cidade:"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvExibePais"
+        app:layout_constraintTop_toBottomOf="@id/tvExibePais" />
+
+    <TextView
+        android:id="@+id/tvCidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Cidade"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="@id/tvPais"
+        app:layout_constraintTop_toBottomOf="@id/tvPais" />
+
+    <TextView
+        android:id="@+id/tvExibePais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:text="País:"
+        app:layout_constraintStart_toEndOf="@id/ivFoto"
+        app:layout_constraintTop_toBottomOf="@id/tvExibeNome"
+        app:layout_constraintBottom_toTopOf="@id/tvExibeCidade"
+        />
+
+    <TextView
+        android:id="@+id/tvPais"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:text="País"
+        app:layout_constraintStart_toEndOf="@id/tvExibeCidade"
+        app:layout_constraintTop_toBottomOf="@id/tvNome"
+        app:layout_constraintBottom_toTopOf="@id/tvCidade"
+        />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
