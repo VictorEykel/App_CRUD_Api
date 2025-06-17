@@ -20,17 +20,14 @@ class MainActivity : AppCompatActivity(), UserAdapter.OnItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
         findViewById<Button>(R.id.btIncluir).setOnClickListener {
             val intent = Intent(this, Cadastro::class.java)
             startActivity(intent)
         }
-
     }
 
     override fun onResume() {
         super.onResume()
-
         loadDatas()
     }
 

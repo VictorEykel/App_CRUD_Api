@@ -9,19 +9,19 @@ import retrofit2.http.PUT
 import retrofit2.http.Path
 
 interface EndPoint {
-    @GET("/Pessoa/")
+    @GET("/Pessoas/")
     fun get() : Call<ArrayList<UserModel>>
 
-    @GET("/Pessoa/{id}")
+    @GET("/Pessoas/{id}")
     fun getPessoaId(@Path("id") id: Int) : Call<UserModel>
 
-    @POST("/Pessoa/")
+    @POST("/Pessoas/")
     fun post() : Call<ArrayList<UserModel>>
 
-    @PUT("/Pessoa/{id}")
+    @PUT("/Pessoas/{id}")
     fun update(@Path("id") id: Int, @Body pessoa: UserModel): Call<UserModel>
 
-    @DELETE("/Pessoa/{id}")
+    @DELETE("/Pessoas/{id}")
     fun delete(@Path("id") id: Int): Call<UserModel>
 
 }
