@@ -16,7 +16,7 @@ interface EndPoint {
     fun getPessoaId(@Path("id") id: Int) : Call<UserModel>
 
     @POST("/Pessoas/")
-    fun post() : Call<ArrayList<UserModel>>
+    fun post(@Body pessoa: UserModel) : Call<UserModel>
 
     @PUT("/Pessoas/{id}")
     fun update(@Path("id") id: Int, @Body pessoa: UserModel): Call<UserModel>

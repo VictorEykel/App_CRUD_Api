@@ -36,8 +36,8 @@ class UserAdapter(val contexto: Context, val itens: ArrayList<UserModel>, privat
 
     override fun onBindViewHolder(holder: viewHolder, position: Int) {
         holder.tvNome.text = itens[position].name
-        holder.tvCidade.text = itens[position].endereco_city
-        holder.tvPais.text = itens[position].endereco_pais
+        holder.tvCidade.text = itens[position].cidade
+        holder.tvPais.text = itens[position].pais
 
         Glide
             .with(contexto)
