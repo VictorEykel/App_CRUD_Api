@@ -73,9 +73,9 @@ class MainActivity : AppCompatActivity(), UserAdapter.OnItemClickListener {
         if (adapter != null) {
             val clickedUser = adapter.itens[position]
             val userId = clickedUser.id
-            val i = Intent(this, Cadastro::class.java)
+            val intent = Intent(this, Cadastro::class.java)
             intent.putExtra("userId", userId)
-            startActivity(i)
+            startActivity(intent)
         }
     }
 }

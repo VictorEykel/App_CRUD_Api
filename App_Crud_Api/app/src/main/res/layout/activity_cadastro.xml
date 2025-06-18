@@ -62,11 +62,27 @@
         android:ems="10"
         android:inputType="text"
         android:hint="Digite seu País"/>
+    <TextView
+        android:id="@+id/tvFoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Foto (opcional)" />
+
+    <EditText
+        android:id="@+id/etFoto"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="text"
+        android:hint="Cole a URL da Foto"/>
 
 
     <LinearLayout
+        android:id="@+id/lyBtsPadrao"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
         android:layout_marginTop="40dp"
         android:orientation="horizontal">
 
@@ -87,6 +103,42 @@
             android:layout_weight="1"
             android:layout_marginRight="2dp"
             android:text="Salvar" />
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/lyBtsAlterar"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="40dp"
+        android:visibility="gone"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btCancelar2"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:layout_marginLeft="2dp"
+            android:text="Cancelar" />
+
+        <Button
+            android:id="@+id/btAlterar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:layout_marginRight="2dp"
+            android:text="Alterar" />
+        <Button
+            android:id="@+id/btDeletar"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_weight="1"
+            android:layout_marginRight="2dp"
+            android:text="Deletar" />
 
     </LinearLayout>
 </LinearLayout>

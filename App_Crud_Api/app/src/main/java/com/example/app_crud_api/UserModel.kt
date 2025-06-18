@@ -14,5 +14,6 @@ class UserModel {
     @SerializedName("pais")
     var pais: String = ""
 
+    @SerializedName("foto")
     var foto: String = ""
 }
