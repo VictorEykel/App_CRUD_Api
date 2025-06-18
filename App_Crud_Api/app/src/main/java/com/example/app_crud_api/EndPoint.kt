@@ -22,6 +22,6 @@ interface EndPoint {
     fun update(@Path("id") id: Int, @Body pessoa: UserModel): Call<UserModel>
 
     @DELETE("/Pessoas/{id}")
-    fun delete(@Path("id") id: Int): Call<UserModel>
+    fun delete(@Path("id") id: Int): Call<Void>
 
 }

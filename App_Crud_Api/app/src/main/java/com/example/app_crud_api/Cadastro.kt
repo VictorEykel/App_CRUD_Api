@@ -33,7 +33,9 @@ class Cadastro : AppCompatActivity() {
         val etPais = findViewById<EditText>(R.id.etPais).text.toString()
 
         var user = UserModel()
-
+        user.name = etNome
+        user.cidade = etCidade
+        user.pais = etPais
 
         val contexto = this
 
@@ -42,13 +44,14 @@ class Cadastro : AppCompatActivity() {
                 call: Call<UserModel>,
                 response: Response<UserModel>
             ){
-//                val pessoas = response.body()
-
-                user.name = etNome
-                user.cidade = etCidade
-                user.pais = etPais
+                if (response.isSuccessful) {
+                    Toast.makeText(contexto, "Usuário Cadastrado Com Sucesso!", Toast.LENGTH_SHORT)
+                        .show()
+                }else{
+                    Toast.makeText(contexto, "Ocorreu um Erro ao Cadastrar o Usuário!", Toast.LENGTH_SHORT)
+                        .show()
+                }
             }
-
             override fun onFailure(call: Call<UserModel>, t: Throwable){
                 Toast.makeText(contexto, "Deu Erro na Api", Toast.LENGTH_SHORT).show()
             }
