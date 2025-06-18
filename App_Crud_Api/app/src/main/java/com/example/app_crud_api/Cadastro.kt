@@ -81,11 +81,13 @@ class Cadastro : AppCompatActivity() {
         val etNome = findViewById<EditText>(R.id.etNome).text.toString()
         val etCidade = findViewById<EditText>(R.id.etCidade).text.toString()
         val etPais = findViewById<EditText>(R.id.etPais).text.toString()
+        val etFoto = findViewById<EditText>(R.id.etFoto).text.toString()
 
         var user = UserModel()
         user.name = etNome
         user.cidade = etCidade
         user.pais = etPais
+        user.foto = etFoto
 
         val contexto = this
 
@@ -152,11 +154,14 @@ class Cadastro : AppCompatActivity() {
         val etNome = findViewById<EditText>(R.id.etNome).text.toString()
         val etCidade = findViewById<EditText>(R.id.etCidade).text.toString()
         val etPais = findViewById<EditText>(R.id.etPais).text.toString()
+        val etFoto = findViewById<EditText>(R.id.etFoto).text.toString()
+
 
         var user = UserModel()
         user.name = etNome
         user.cidade = etCidade
         user.pais = etPais
+        user.foto = etFoto
 
         endpoint.update(userId, user).enqueue(object : Callback<UserModel> {
             override fun onResponse(
