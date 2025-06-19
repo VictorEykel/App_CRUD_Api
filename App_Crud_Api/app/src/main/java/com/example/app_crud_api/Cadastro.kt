@@ -43,7 +43,7 @@ class Cadastro : AppCompatActivity() {
     }
 
     private fun loadUserData() {
-        val retrofit = RetrofitUtils.getRetrofitInstance("https://684ba735ed2578be881bffaf.mockapi.io")
+        val retrofit = RetrofitUtils.getRetrofitInstance("https://684ba735ed2578be881bffaf.mockapi.io/Eykel/72400307/")
         val endpoint = retrofit.create(EndPoint::class.java)
         val contexto = this
 
@@ -75,7 +75,7 @@ class Cadastro : AppCompatActivity() {
             return
         }
 
-        val retrofit = RetrofitUtils.getRetrofitInstance("https://684ba735ed2578be881bffaf.mockapi.io")
+        val retrofit = RetrofitUtils.getRetrofitInstance("https://684ba735ed2578be881bffaf.mockapi.io/Eykel/72400307/")
         val endpoint = retrofit.create(EndPoint::class.java)
 
         val etNome = findViewById<EditText>(R.id.etNome).text.toString()
@@ -118,7 +118,7 @@ class Cadastro : AppCompatActivity() {
             return
         }
 
-        val retrofit = RetrofitUtils.getRetrofitInstance("https://684ba735ed2578be881bffaf.mockapi.io")
+        val retrofit = RetrofitUtils.getRetrofitInstance("https://684ba735ed2578be881bffaf.mockapi.io/Eykel/72400307/")
         val endpoint = retrofit.create(EndPoint::class.java)
         val contexto = this
 
@@ -147,7 +147,7 @@ class Cadastro : AppCompatActivity() {
             Toast.makeText(this, "ID do usuário inválido para exclusão", Toast.LENGTH_SHORT).show()
             return
         }
-        val retrofit = RetrofitUtils.getRetrofitInstance("https://684ba735ed2578be881bffaf.mockapi.io")
+        val retrofit = RetrofitUtils.getRetrofitInstance("https://684ba735ed2578be881bffaf.mockapi.io/Eykel/72400307/")
         val endpoint = retrofit.create(EndPoint::class.java)
         val contexto = this
 

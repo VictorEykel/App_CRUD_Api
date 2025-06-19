@@ -32,7 +32,7 @@ class MainActivity : AppCompatActivity(), UserAdapter.OnItemClickListener {
     }
 
     fun loadDatas(){
-        val retrofit = RetrofitUtils.getRetrofitInstance("https://684ba735ed2578be881bffaf.mockapi.io")
+        val retrofit = RetrofitUtils.getRetrofitInstance("https://684ba735ed2578be881bffaf.mockapi.io/Eykel/72400307/")
         val endpoint = retrofit.create(EndPoint::class.java)
 
         val contexto = this
